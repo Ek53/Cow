@@ -41,12 +41,12 @@ class Cowtopia:
         """
 
         self.auto_do_task = (
-            json.load(open(config_file, "r")).get("auto-do-task", "false").lower()
+            json.load(open(config_file, "r")).get("auto-do-task", "true").lower()
             == "true"
         )
 
         self.auto_buy_factory = (
-            json.load(open(config_file, "r")).get("auto-buy-factory", "false").lower()
+            json.load(open(config_file, "r")).get("auto-buy-factory", "true").lower()
             == "true"
         )
 
@@ -58,7 +58,7 @@ class Cowtopia:
         )
 
         self.auto_buy_animal = (
-            json.load(open(config_file, "r")).get("auto-buy-animal", "false").lower()
+            json.load(open(config_file, "r")).get("auto-buy-animal", "true").lower()
             == "true"
         )
 
