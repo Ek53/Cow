@@ -332,6 +332,9 @@ class Cowtopia:
 
 if __name__ == "__main__":
     try:
+        p = multiprocessing.Process(target=web_server, args=())
+        p.daemon = True
+        p.start()
         cowtopia = Cowtopia()
         cowtopia.main()
     except KeyboardInterrupt:
