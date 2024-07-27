@@ -20,8 +20,15 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 
 # Construct the full paths to the files
 data_file = os.path.join(script_dir, "data.txt")
-config_file = os.path.join(script_dir, "config.json")
 
+PORT = 8080
+
+def web_server(): 
+    Handler = http.server.SimpleHTTPRequestHandler
+
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print("serving at port", PORT, flush=True)
+        httpd.serve_forever()
 
 class Cowtopia:
     def __init__(self):
